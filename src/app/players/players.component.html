@@ -1,0 +1,7 @@
+
+<div class="players">
+    <div class="player" *ngFor="let x of players">
+      <span class="keycode" [style.backgroundColor]="x.color" >{{ x.keyCode}}</span>
+      <span class="name">{{ x.name }}</span>
+    </div>
+</div>
