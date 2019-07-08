@@ -1,7 +1,19 @@
-
-<div class="players">
-    <div class="player" *ngFor="let x of players">
-      <span class="keycode" [style.backgroundColor]="x.color" >{{ x.keyCode}}</span>
-      <span class="name">{{ x.name }}</span>
-    </div>
+<div class="new_player" *ngIf=" firstScreen === true">
+  <input #newPlayerName placeholder="New Player"/>
+  <button (click)="playerservice.addPlayer(newPlayerName.value); newPlayerName.value=''"> + </button>
 </div>
+
+<!--
+Let's break down what happens after button is clicked,newPlayerName.value represents value in the input field, 
+which is passed into the function addPlayer which we defined earlier in PlayerService(player.service.ts).
+Then, we are making the input field empty using newPlayerName.value = ''
+-->
+
+<div class="players" [class.playing]="firstScreen === 'playarea'" >
+  <div class="player" *ngFor="let player of playerservice.getPlayers()">
+      <span
+      class="keycode" [style.backgroundColor]="player.color" >{{ player.keyCode}}</span>
+      <span class="name">{{ player.name }}</span>
+    </div>
+  </div>
+<button id="start"> Start the Game </button>

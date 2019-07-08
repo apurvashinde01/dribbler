@@ -19,3 +19,60 @@
 {
   margin-left: 1em;
 }
+/** New Player Input **/
+.new_player input
+{
+ font-size: 2em;
+ padding: 1em;
+ width: 70%;
+}
+.new_player button
+{
+ background-color: #4A4A4A;
+ color: #ffffff;
+ cursor: pointer;
+ display: inline-block;
+ font-size: 2em;
+ height: 3em;
+ padding: 1em;
+ text-align: center;
+ width: 3em;
+}
+
+#start{
+  background-color: rgb(98, 253, 144);
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 2em;
+  height: 3em;
+  padding: 1em;
+  text-align: center;
+  align-content: center;
+  border-radius: 10px;
+  width: 70%;
+}
+/** Players whiles they are playing **/
+.players.playing .player
+{
+ float: left;
+ background: none;
+ transform: translate3d(0, 0, 0);
+ animation: bounce;
+ animation-duration: 10s;
+ animation-direction : normal;
+ animation-iteration-count: infinite;
+}
+.players.playing .player .keycode
+{
+ border-radius: 100%;
+}
+.players.playing .player .name,.players.playing .player .score
+{
+ display: none;
+}
+/** Animation CSS **/
+@keyframes bounce {
+ 50% { transform: translate3d(0, 60vh, 0);   }
+ 100% { transform: translate3d(0, 0, 0);   }
+}

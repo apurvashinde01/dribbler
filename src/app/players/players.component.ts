@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import {PlayerClass} from '../players.';
-import {PLAYERS} from '../player-stock';
+import { Component, OnInit, Input } from '@angular/core';
+import { PlayerService } from '../player.service';
 
 @Component({
   selector: 'app-players',
@@ -8,18 +7,17 @@ import {PLAYERS} from '../player-stock';
   styleUrls: ['./players.component.css']
 })
 export class PlayersComponent implements OnInit {
- /* For a single player
-  private player: PlayerClass = {
-  keyCode : 'D',
-  name : 'Kobe Bryant',
-  color : '#BD10E0'
- };                      // Note  player variable type was changed from string to PlayerClass
- */
 
-private players: PlayerClass[] = PLAYERS;
-
- constructor() { }
-
- ngOnInit() {
- }
+  @Input('firstScreen') firstScreen: any = true;
+  /* For a single player
+   private player: PlayerClass = {
+   keyCode : 'D',
+   name : 'Kobe Bryant',
+   color : '#BD10E0'
+  };                      // Note  player variable type was changed from string to PlayerClass
+  */
+  constructor(private playerservice: PlayerService) {
+  }
+  ngOnInit() {
+  }
 }
