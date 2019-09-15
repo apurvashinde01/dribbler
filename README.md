@@ -1,2 +1,2 @@
 # dribbler
- A simple game developed to get begin with Angular.
+ A simple game developed to begin with Angular.
